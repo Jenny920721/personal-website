@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人作品集 | VR & AI 模擬面試系統專案</title>
+    <style>
+        /* 全局樣式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8fafc;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* 導覽列 */
+        header {
+            background-color: #0f172a;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1.2rem 2rem;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: #38bdf8;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a:hover {
+            color: #38bdf8;
+            transition: color 0.3s;
+        }
+
+        /* 主頁 Hero 區塊 */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #fff;
+            padding: 8rem 2rem 5rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1rem;
+            color: #f8fafc;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+
+        .badge-container {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background-color: rgba(56, 189, 248, 0.15);
+            color: #38bdf8;
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+        }
+
+        /* 版面容器 */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            color: #0f172a;
+            margin-bottom: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 60px;
+            height: 4px;
+            background-color: #0284c7;
+            border-radius: 2px;
+        }
+
+        /* 專案卡片區 */
+        .project-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            margin-bottom: 2.5rem;
+        }
+
+        .project-header {
+            padding: 2rem;
+            background-color: #f1f5f9;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-subtitle {
+            color: #64748b;
+            font-size: 1rem;
+        }
+
+        .project-body {
+            padding: 2rem;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .card {
+            background: #f8fafc;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #0284c7;
+        }
+
+        .card h4 {
+            color: #0f172a;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+
+        .card ul {
+            padding-left: 1.2rem;
+            color: #475569;
+        }
+
+        .card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* 榮譽與成就區 */
+        .awards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .award-card {
+            background: #fff;
+            padding: 1.8rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
+            text-align: center;
+        }
+
+        .award-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.8rem;
+        }
+
+        .award-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #0f172a;
+            margin-bottom: 0.5rem;
+        }
+
+        .award-desc {
+            color: #64748b;
+            font-size: 0.95rem;
+        }
+
+        /* 頁尾 */
+        footer {
+            background-color: #0f172a;
+            color: #94a3b8;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+
+        /* 響應式調整 */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 頂部導覽列 -->
+    <header>
+        <nav>
+            <div class="logo">Portfolio</div>
+            <ul class="nav-links">
+                <li><a href="#about">關於我</a></li>
+                <li><a href="#project">主打專案</a></li>
+                <li><a href="#skills">核心技能</a></li>
+                <li><a href="#awards">競賽榮譽</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero 主頁區塊 -->
+    <section class="hero">
+        <h1>VR & AI 跨領域專案開發者</h1>
+        <p>致力於結合虛擬實境（VR）與人工智慧（AI）技術，打造高品質的互動系統與 E 化網站體驗。</p>
+        <div class="badge-container">
+            <span class="badge">VR 虛擬實境</span>
+            <span class="badge">Azure 雲端服務</span>
+            <span class="badge">E 化網站設計</span>
+            <span class="badge">AI 生成工具應用</span>
+            <span class="badge">專案管理与團隊合作</span>
+        </div>
+    </section>
+
+    <div class="container">
+
+        <!-- 關於我區塊 -->
+        <section id="about">
+            <h2 class="section-title">關於我</h2>
+            <p style="font-size: 1.1rem; color: #475569; line-height: 1.8;">
+                在大學期間，我與 4 位團隊成員在 <strong>朱蕙君 老師</strong> 的指導下，共同開發了一款融合 VR 與 AI 技術的「模擬面試系統」。在專案中，我主要負責 <strong>E 化網站設計、教學簡報製作、面試問題與回答內容規劃</strong>，並善用 Copilot 等 AI 工具提升開發效率。我具備良好的跨領域整合能力，並在專案管理與競賽展演中積累了豐富的實戰經驗。
+            </p>
+        </section>
+
+        <!-- 代表專案區塊 -->
+        <section id="project">
+            <h2 class="section-title">代表作品</h2>
+            
+            <div class="project-card">
+                <div class="project-header">
+                    <h3 class="project-title">VeRy easy《元》你職夢</h3>
+                    <p class="project-subtitle">指導教授：朱蕙君 老師 | 團隊合作專案（5人團隊）</p>
+                </div>
+                <div class="project-body">
+                    <p style="color: #334155; margin-bottom: 1.5rem;">
+                        本系統旨在透過 VR 虛擬實境與 AI 雲端技術，幫助求職者更有效率地準備面試。系統提供擬真辦公室體驗、自動化面試回饋以及完整的面試教學流程。
+                    </p>
+
+                    <h4>💡 我在專案中的核心貢獻：</h4>
+                    <div class="grid-2">
+                        <div class="card">
+                            <h4>🌐 網站設計與展示</h4>
+                            <ul>
+                                <li>打造專案展示網站（E 化網站），完整呈現系統架構與應用場景。</li>
+                                <li>設計流暢的使用者互動流程。</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>📊 簡報視覺與教學製作</h4>
+                            <ul>
+                                <li>負責面試教學影片中的 PPT 視覺呈現，讓面試技巧更易理解。</li>
+                                <li>運用 Microsoft Copilot 生成教學圖片，提升開發效率。</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>✍️ 面試內容與建議規劃</h4>
+                            <ul>
+                                <li>設計多樣化面試問題與建議回答（涵蓋個人背景、工作經驗、特長等）。</li>
+                                <li>建立面試內容自動化回饋機制（提供音檔、文字與專業問題解答）。</li>
+                            </ul>
+                        </div>
+                        <div class="card">
+                            <h4>🛠️ 系統整合技術</h4>
+                            <ul>
+                                <li><strong>Unity：</strong> 構建逼真虛擬面試場景與模擬面試官互動。</li>
+                                <li><strong>Azure 雲端服務：</strong> 進行文本分析與語音轉換。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 核心技能區塊 -->
+        <section id="skills">
+            <h2 class="section-title">核心技能</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h4>💻 專案開發與工具</h4>
+                    <ul>
+                        <li>E 化網站規劃與前端設計</li>
+                        <li>Unity 虛擬場景應用與 VR 設備整合</li>
+                        <li>Azure 雲端服務（文本分析、TTS 語音轉換）</li>
+                        <li>AI 工具應用（Copilot 輔助視覺與內容生成）</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>🤝 軟實力與專案管理</h4>
+                    <ul>
+                        <li>團隊合作與跨領域溝通</li>
+                        <li>專案時程管理（準時於10月前完成專案開發）</li>
+                        <li>競賽簡報與成果展示</li>
+                        <li>求職面試教學與內容企劃</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 競賽榮譽區塊 -->
+        <section id="awards">
+            <h2 class="section-title">競賽榮譽</h2>
+            <div class="awards-grid">
+                <div class="award-card">
+                    <div class="award-icon">🏆</div>
+                    <div class="award-title">資訊應用服務創新競賽</div>
+                    <div class="award-desc">取得優異成績 / 全國性競賽成果展現</div>
+                </div>
+                <div class="award-card">
+                    <div class="award-icon">🥇</div>
+                    <div class="award-title">校內全系競賽 第二名</div>
+                    <div class="award-desc">跨系所專案競賽評比 榮獲亞軍</div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>© 個人作品集 - VR & AI 專案展示 | Powered by Web Design</p>
+    </footer>
+
+</body>
+</html>
