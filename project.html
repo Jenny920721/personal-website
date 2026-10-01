@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>個人作品集 | 專案介紹</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: "PingFang TC", "Microsoft JhengHei", sans-serif; }
+        body { line-height: 1.6; color: #333; background-color: #f8fafc; }
+        header { background-color: #0f172a; color: #fff; position: fixed; width: 100%; top: 0; z-index: 1000; }
+        nav { display: flex; justify-content: space-between; align-items: center; max-width: 1200px; margin: 0 auto; padding: 1.2rem 2rem; }
+        .logo { font-size: 1.4rem; font-weight: bold; color: #38bdf8; text-decoration: none; }
+        .nav-links { display: flex; list-style: none; gap: 2rem; }
+        .nav-links a { color: #f8fafc; text-decoration: none; font-weight: 500; transition: color 0.3s; }
+        .nav-links a:hover, .nav-links a.active { color: #38bdf8; }
+        .container { max-width: 1000px; margin: 7rem auto 4rem; padding: 0 2rem; }
+        .card { background: #fff; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); margin-bottom: 2rem; border: 1px solid #e2e8f0; }
+        .card h1 { color: #0f172a; margin-bottom: 0.5rem; font-size: 2rem; }
+        .subtitle { color: #64748b; margin-bottom: 1.5rem; }
+        .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-top: 1rem; }
+        .box { background: #f1f5f9; padding: 1.2rem; border-radius: 8px; }
+        .box h3 { color: #0f172a; margin-bottom: 0.5rem; }
+        .btn { display: inline-block; background-color: #0284c7; color: #fff; padding: 0.8rem 1.8rem; border-radius: 8px; text-decoration: none; font-weight: bold; margin-top: 1.5rem; }
+        footer { background-color: #0f172a; color: #94a3b8; text-align: center; padding: 2rem; margin-top: 4rem; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">Portfolio</a>
+            <ul class="nav-links">
+                <li><a href="index.html">關於我</a></li>
+                <li><a href="project.html" class="active">專案介紹</a></li>
+                <li><a href="demo.html">專案網站展示</a></li>
+                <li><a href="skills.html">核心技能</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <div class="card">
+            <h1>VeRy easy《元》你職夢</h1>
+            <p class="subtitle">指導教授：朱蕙君 老師 | 5 人團隊專案</p>
+            <p>本專案結合 VR 虛擬實境與 AI 雲端技術，打造擬真辦公室面試場景與自動化分析系統，協助求職者提升面試應答能力。</p>
+
+            <h2 style="margin-top: 2rem; color: #0f172a;">我在專案中的四大職責：</h2>
+            <div class="grid-2">
+                <div class="box">
+                    <h3>🌐 網站設計</h3>
+                    <p>打造專案展示網站（E 化網站），完整呈現系統功能與應用情境。</p>
+                </div>
+                <div class="box">
+                    <h3>📊 PPT 視覺製作</h3>
+                    <p>負責面試教學影片中的簡報與視覺呈現，並運用 Copilot 生成教學圖片。</p>
+                </div>
+                <div class="box">
+                    <h3>✍️ 面試問題與建議規劃</h3>
+                    <p>設計多樣化面試問題與標準回答範例，包含自我介紹與經驗整合。</p>
+                </div>
+                <div class="box">
+                    <h3>🛠️ 技術與架構整合</h3>
+                    <p>搭配 Unity 虛擬面試場景與 Azure 雲端語音與文本分析服務。</p>
+                </div>
+            </div>
+
+            <a href="demo.html" class="btn">前往觀看互動專案網站 →</a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© 個人作品集 | VR & AI Project Portfolio</p>
+    </footer>
+</body>
+</html>
